@@ -18,13 +18,14 @@
             <p>Do you have any dietry needs/prefrences ?</p>
             Choose an option:
             <select class="select" id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct');organicCheck()">
-        <option value="option">Please select an option</option>
-        <option value="None">None</option>
-        <option value="LactoseIntolerant">Lactose Intolerance/Sensitivity</option>
-        <option value="NutAllergy">Nut Allergy</option>
-        <option value="Lactose Intolerance/Sensitivity and Nut Allergy">Lactose Intolerance/Sensitivity and Nut Allergy</option>
-  
-      </select>
+                <option value="option">Please select an option</option>
+                <option value="None">None</option>
+                <option value="LactoseIntolerant">Lactose Intolerance/Sensitivity</option>
+                <option value="NutAllergy">Nut Allergy</option>
+                <option value="Lactose Intolerance/Sensitivity and Nut Allergy">Lactose Intolerance/Sensitivity and Nut
+                    Allergy</option>
+
+            </select>
             <br>
             <br> Would you like to see Organic foods ?
             <input type="checkbox" id="org" onchange="organicCheck();populateListProductChoices('dietSelect', 'displayProduct')">
@@ -47,7 +48,8 @@
             <div id="added"></div>
             <br>
             <button class="btn" onclick="openInfo(event, 'Client')">Back</button>
-            <button class="btn" onclick="openInfo(event, 'Cart');selectedItems()" id="continue">Continue to checkout</button>
+            <button class="btn" onclick="openInfo(event, 'Cart');selectedItems()" id="continue">Continue to
+                checkout</button>
         </div>
 
         <div id="Cart" class="tabcontent">
@@ -66,7 +68,8 @@
 
 
         <div class="tab">
-            <button class="btn" onclick="openInfo(event, 'Client');hide()" id="start">Click Here to get Started!</button>
+            <button class="btn" onclick="openInfo(event, 'Client');hide()" id="start">Click Here to get
+                Started!</button>
 
         </div>
 
