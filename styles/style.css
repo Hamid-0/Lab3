@@ -105,7 +105,7 @@ h4 {
     height: 25px;
     width: 25px;
     display: block;
-    position: relative;
+    position: absolutes;
     cursor: pointer;
     bottom: 240px;
     left: 490px;
