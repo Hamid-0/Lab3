@@ -45,7 +45,7 @@
  	        name: "Peanuts",
  	        LactoseIntolerant: true,
  	        NutAllergy: false,
- 	        price: 10.00,
+ 	        price: 10.25,
  	        organic: false,
  	        image: "Images/cropped-Raw-Shelled-Peanuts.jpg"
  	    },
