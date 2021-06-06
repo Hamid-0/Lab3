@@ -80,17 +80,8 @@ function populateListProductChoices(slct1, slct2) {
     var cbNone = document.getElementById("cbNone");
     var cbLactoseIntolerant = document.getElementById("cbLactoseIntolerant");
     var cbNutAllergy = document.getElementById("cbNutAllergy");
-    var cbKale = document.getElementById("cbKale");
 
-    if (cbKale.checked) {
-        cbNone.disable = true;
-        cbLactoseIntolerant.disabled = true;
-        cbNutAllergy.disabled = true;
-    } else {
-        cbNone.disable = false;
-        cbLactoseIntolerant.disabled = false;
-        cbNutAllergy.disabled = false;
-    }
+
 
     if (cbNone.checked) {
         cbLactoseIntolerant.disabled = true;

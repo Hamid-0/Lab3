@@ -118,9 +118,18 @@
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 6.99,
- 	        organic: true,
+ 	        organic: false,
+ 	        image: "Images/kale.jpg"
+ 	    },
+ 	    {
+ 	        name: "Kale NON-GMO",
+ 	        LactoseIntolerant: true,
+ 	        NutAllergy: true,
+ 	        price: 8.50,
+ 	        organic: false,
  	        image: "Images/kale.jpg"
  	    }
+
 
 
 
