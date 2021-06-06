@@ -6,102 +6,121 @@
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 23.20,
- 	        organic: true
+ 	        organic: true,
+ 	        image: "Images/romanesco.jpg"
  	    },
  	    {
  	        name: "Broccoli",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 13.21,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/how-to-cook-broccoli-10-1200.jpg"
  	    },
  	    {
  	        name: "Bread",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 2.35,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/Easiest-Yeast-Bread.jpg"
  	    },
  	    {
  	        name: "Salmon NON-GMO",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 15.00,
- 	        organic: true
+ 	        organic: true,
+ 	        image: "Images/download.jpg"
  	    },
  	    {
  	        name: "Salmon",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 10.00,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/clipped_salmon.jpg"
  	    },
  	    {
  	        name: "Peanuts",
  	        LactoseIntolerant: true,
  	        NutAllergy: false,
  	        price: 10.00,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/cropped-Raw-Shelled-Peanuts.jpg"
  	    },
  	    {
  	        name: "Cucumbers NON-GMO",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 8.50,
- 	        organic: true
+ 	        organic: true,
+ 	        image: "Images/large_4579c5e3-8e51-446b-ba1d-5f46b06f97a3.jpg"
  	    },
  	    {
  	        name: "Cucumbers",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 9.85,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/cucumber.jpg"
  	    },
  	    {
  	        name: "Milk",
  	        LactoseIntolerant: false,
  	        NutAllergy: true,
  	        price: 6.65,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/milk.jpg"
  	    },
  	    {
  	        name: "Cheese",
  	        LactoseIntolerant: false,
  	        NutAllergy: true,
  	        price: 11.25,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/cheese.jpg"
  	    },
  	    {
  	        name: "Peanut M&Ms",
  	        LactoseIntolerant: true,
  	        NutAllergy: false,
  	        price: 5.25,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/MandM.jpg"
  	    },
  	    {
  	        name: "Frozen Pizza",
  	        LactoseIntolerant: false,
  	        NutAllergy: true,
  	        price: 9.65,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/pizza.jpg"
  	    },
  	    {
  	        name: "Crackers",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 5.25,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/crackers.jpg"
  	    },
  	    {
  	        name: "Lays Chips",
  	        LactoseIntolerant: true,
  	        NutAllergy: true,
  	        price: 3.75,
- 	        organic: false
+ 	        organic: false,
+ 	        image: "Images/L0871670.jpg"
+ 	    },
+ 	    {
+ 	        name: "Kale",
+ 	        LactoseIntolerant: true,
+ 	        NutAllergy: true,
+ 	        price: 6.99,
+ 	        organic: true,
+ 	        image: "Images/kale.jpg"
  	    }
-
-
-
 
 
 

@@ -22,27 +22,36 @@ function openInfo(evt, tabName) {
     evt.currentTarget.className += " active";
     if (tabName == 'Products') {
 
-        document.getElementById("start").innnerHTML =
-            "New Button Text using innerHTML";
 
+        document.getElementById("start").style.display = "block";
 
 
     }
     if (tabName == 'Client') {
-        document.getElementById("start").textContent = 'Start Over';
+        hide();
         document.getElementById("chose").disabled = true;
-        document.getElementById("dietSelect").selectedIndex = 0;
         document.getElementById("org").checked = false;
+        document.getElementById("cbNone").checked = false;
+        document.getElementById("cbLactoseIntolerant").checked = false;
+        document.getElementById("cbNutAllergy").checked = false;
+        document.getElementById("cbNutAllergy").disabled = false;
+        document.getElementById("cbLactoseIntolerant").disabled = false;
+        document.getElementById("cbNone").disabled = false;
+
         total = 0;
+        container.innerHTML = '';
+
 
     }
 
-    function hide() {
-        var x = document.getElementById("start");
 
-        x.style.display = "none";
+}
 
-    }
+function hide() {
+    var x = document.getElementById("start");
+
+    x.style.display = "none";
+
 }
 
 function organicCheck() {
@@ -57,9 +66,10 @@ function organicCheck() {
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2) {
-
+    container.innerHTML = '';
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
+    bNext = document.getElementById("chose");
 
     if (s1.value != "option") {
         document.getElementById("chose").disabled = false;
@@ -67,19 +77,44 @@ function populateListProductChoices(slct1, slct2) {
         document.getElementById("chose").disabled = true;
 
     }
+    var cbNone = document.getElementById("cbNone");
+    var cbLactoseIntolerant = document.getElementById("cbLactoseIntolerant");
+    var cbNutAllergy = document.getElementById("cbNutAllergy");
+    if (cbNone.checked) {
+        cbLactoseIntolerant.disabled = true;
+        cbNutAllergy.disabled = true;
+    } else {
+        cbLactoseIntolerant.disabled = false;
+        cbNutAllergy.disabled = false;
+    }
+    if (cbNutAllergy.checked || cbLactoseIntolerant.checked) {
+        cbNone.disabled = true;
+    } else {
+        cbNone.disabled = false;
+    }
 
+    if (cbNone.checked || cbLactoseIntolerant.checked || cbNutAllergy.checked) {
+        bNext.disabled = false;
+    } else {
+        bNext.disabled = true;
+    }
 
     // s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
-    restriction = s1.value
+    if (cbLactoseIntolerant.checked && cbNutAllergy.checked) {
+        restriction = "Lactose Intolerance/Sensitivity and Nut Allergy"
+    } else {
+        restriction = s1.value;
+    }
     var optionArray = restrictListProducts(products, restriction, organic);
 
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
-
+    container.style.setProperty('--grid-rows', optionArray.length / 3);
+    container.style.setProperty('--grid-cols', 3);
     for (i = 0; i < optionArray.length; i++) {
         price = formatter.format(optionArray[i].price);
         productName = optionArray[i].name;
@@ -89,19 +124,32 @@ function populateListProductChoices(slct1, slct2) {
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.name = "product";
+        checkbox.className = "item";
         checkbox.value = productName;
-        s2.appendChild(checkbox);
-
+        var productImage = document.createElement('img');
+        productImage.src = optionArray[i].image;
         // create a label for the checkbox, and also add in HTML DOM
         var label = document.createElement('label')
         label.htmlFor = namePrice;
+        label.appendChild(productImage);
+        label.appendChild(document.createElement("br"));
         label.appendChild(document.createTextNode(namePrice));
-        s2.appendChild(label);
 
-        // create a breakline node and add in HTML DOM
-        s2.appendChild(document.createElement("br"));
+
+        let cell = document.createElement("div");
+        cell.appendChild(label);
+        cell.appendChild(checkbox);
+
+        container.appendChild(cell).className = "grid-item";
+
+
     }
 }
+
+
+//https://stackoverflow.com/questions/57550082/creating-a-16x16-grid-using-javascript
+
+var container = document.getElementById("container");
 
 
 // This function is called when the "Add selected items to cart" button in clicked
@@ -127,12 +175,15 @@ function selectedItems() {
     for (i = 0; i < ele.length; i++) {
         price = formatter.format(optionArray[i].price);
         productName = optionArray[i].name;
+
         namePrice = productName + "  " + price;
         if (ele[i].checked) {
+
             para.appendChild(document.createTextNode(namePrice));
             para.appendChild(document.createElement("br"));
             para.appendChild(document.createElement("br"));
             chosenProducts.push(ele[i].value);
+
         }
     }
 
